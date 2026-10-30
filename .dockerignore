@@ -1,0 +1,6 @@
+.git
+.buildkite
+node_modules
+npm-debug.log*
+*.log
+.env
