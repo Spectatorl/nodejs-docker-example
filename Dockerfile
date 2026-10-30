@@ -1,15 +1,13 @@
-FROM node:latest
+FROM node:24-bookworm-slim
 
-RUN mkdir /app
 WORKDIR /app
 
-ENV PATH /app/node_modules/.bin:$PATH
+ENV PATH=/app/node_modules/.bin:$PATH
 
-COPY package.json package-lock.json /app/
-RUN npm install
+COPY package.json package-lock.json ./
 
-# Or if you're using Yarn
-# ADD package.json yarn.lock /app/
-# RUN yarn install
+RUN npm ci
 
-COPY . /app/
+COPY . .
+
+CMD ["npm", "test"]
