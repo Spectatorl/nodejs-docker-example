@@ -37,3 +37,5 @@ docker-compose run app npm test
 ## License
 
 See [LICENSE.md](LICENSE.md) (MIT)
+
+Yunxiao Flow automatic trigger test
